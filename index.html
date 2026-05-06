@@ -182,7 +182,7 @@
 
 .statements {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -193,6 +193,8 @@
 }
 
 .statement-inner {
+  position: relative;   /* REQUIRED */
+  z-index: 4;           /* ABOVE fixed collage */
   max-width: 700px;
   padding: 4rem 6vw;
   text-align: right;
