@@ -159,11 +159,6 @@
       letter-spacing: 0.12em;
     }
 
-    .statements {
-      padding: 6rem 6vw;
-      background-color: #ffffff;
-    }
-
     .statements blockquote {
       font-size: clamp(1.6rem, 3vw, 2.2rem);
       margin-bottom: 3rem;
@@ -179,25 +174,20 @@
 
 .statements {
   position: relative;
-  z-index: 5;
   min-height: 60vh;
 
-  display: flex;
-  align-items: center;
-
   width: 100%;
+  padding: 0;                 /* remove inherited white space */
+  background-color: #0d0f10;  /* match site background */
 }
 
 
 .statement-inner {
-  position: relative;
-  z-index: 6;
-
   max-width: 700px;
   padding: 4rem 6vw;
-  text-align: right;
 
-  margin-left: auto;        /* 🔑 THIS forces right alignment */
+  margin-left: auto;     /* pushes text right */
+  text-align: right;
 
   background: radial-gradient(
     circle at right center,
