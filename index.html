@@ -179,22 +179,25 @@
 
 .statements {
   position: relative;
-  z-index: 5;          /* MUST be higher than fixed collage */
+  z-index: 5;
   min-height: 60vh;
+
   display: flex;
   align-items: center;
+
+  width: 100%;
 }
 
-.statements-right {
-  justify-content: flex-end;
-}
 
 .statement-inner {
-  position: relative;   /* REQUIRED */
-  z-index: 6;           /* ABOVE images */
+  position: relative;
+  z-index: 6;
+
   max-width: 700px;
   padding: 4rem 6vw;
   text-align: right;
+
+  margin-left: auto;        /* 🔑 THIS forces right alignment */
 
   background: radial-gradient(
     circle at right center,
