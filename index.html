@@ -82,8 +82,17 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 4rem 6vw;
   max-width: 900px;
+  padding: 4rem 6vw;
+
+  /* Contrast buffer */
+  background: linear-gradient(
+    to right,
+    rgba(10,12,14,0.55),
+    rgba(10,12,14,0.35),
+    rgba(10,12,14,0.10)
+  );
+  backdrop-filter: blur(2px);
 }
 
 /* Dark overlay for readability */
