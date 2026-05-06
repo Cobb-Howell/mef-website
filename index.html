@@ -31,14 +31,18 @@
 
 /* Collage grid */
 .hero-collage {
-  position: absolute;
-  inset: 0;
+  position: fixed;   /* ← THIS is the key */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template-columns: 2fr 1.5fr 1.5fr;
   grid-template-rows: 1fr 1fr;
   gap: 12px;
   padding: 12px;
-  z-index: 1;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .tile {
@@ -85,15 +89,15 @@
   max-width: 900px;
   padding: 4rem 6vw;
 
-  /* Contrast buffer */
-  background: linear-gradient(
-    to right,
-    rgba(10,12,14,0.55),
-    rgba(10,12,14,0.35),
-    rgba(10,12,14,0.10)
+  /* Invisible contrast layer */
+  background: radial-gradient(
+    circle at left center,
+    rgba(10,12,14,0.45),
+    rgba(10,12,14,0.25) 50%,
+    rgba(10,12,14,0.0) 70%
   );
-  backdrop-filter: blur(2px);
 }
+
 
 /* Dark overlay for readability */
 .hero::after {
@@ -174,7 +178,32 @@
       background-color: #0d0f10;
       color: #9ca3af;
       font-size: 0.8rem;
-    }
+   /* ===== STATEMENTS POSITIONING & CONTRAST ===== */
+
+.statements {
+  position: relative;
+  z-index: 2;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.statements-right {
+  justify-content: flex-end;
+}
+
+.statement-inner {
+  max-width: 700px;
+  padding: 4rem 6vw;
+  text-align: right;
+
+  background: radial-gradient(
+    circle at right center,
+    rgba(10,12,14,0.45),
+    rgba(10,12,14,0.25) 50%,
+    rgba(10,12,14,0) 70%
+  );
+}
   </style>
 </head>
 
@@ -199,10 +228,15 @@
     </div>
   </section>
 
-  <section class="statements">
-    <blockquote>Built on execution. Measured by reliability. Trusted by brands that scale.</blockquote>
-    <blockquote>Sourcing is not a transaction. It is a long‑term advantage.</blockquote>
-  </section>
+<section class="statements statements-right">
+  <div class="statement-inner">
+    <blockquote>
+      Sourcing is not a transaction.<br />
+      It is a long‑term advantage.
+    </blockquote>
+  </div>
+</section>
+``
 
   <footer>
     © 2026 MEF Services LLC. All rights reserved.
