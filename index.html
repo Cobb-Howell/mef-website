@@ -173,22 +173,20 @@
    /* ===== STATEMENTS POSITIONING & CONTRAST ===== */
 
 .statements {
-  position: relative;
   min-height: 60vh;
-
   width: 100%;
-  padding: 0;                 /* remove inherited white space */
-  background-color: #0d0f10;  /* match site background */
+  background-color: #0d0f10;
+
+  display: grid;                 /* 🔑 switch to grid */
+  align-items: center;
+  justify-items: end;            /* 🔑 forces right alignment */
 }
+``
 
 
 .statement-inner {
   max-width: 700px;
   padding: 4rem 6vw;
-
-  margin-left: auto;     /* ← THIS is the key line */
-  margin-right: 6vw;     /* optional, keeps it off the edge */
-
   text-align: right;
 
   background: radial-gradient(
