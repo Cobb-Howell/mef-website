@@ -31,19 +31,22 @@
 
 /* Collage grid */
 .hero-collage {
-  position: fixed;   /* ← THIS is the key */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+
   display: grid;
   grid-template-columns: 2fr 1.5fr 1.5fr;
   grid-template-rows: 1fr 1fr;
   gap: 12px;
   padding: 12px;
-  z-index: 0;
+
+  z-index: -1;           /* 🔑 THIS IS THE KEY */
   pointer-events: none;
 }
+
 
 .tile {
   background-size: cover;
